@@ -33,7 +33,7 @@ La evidencia de programación e integración está en los commits de este reposi
 
 ## Cómo ejecutar el build
 
-1. Ir a **Releases** de este repositorio y descargar `Memetik_Prototipo_v0.1.zip`.
+1. Ir a **Releases** de este repositorio y descargar el `.zip` que aparece en el Release.
 2. Descomprimir el `.zip` completo (no abrirlo desde dentro del zip).
 3. Abrir **`Recorrido virtual.exe`**.
 
