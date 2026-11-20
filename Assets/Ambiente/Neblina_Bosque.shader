@@ -17,6 +17,7 @@ Shader "Ambiente/Neblina Bosque (volumen)"
         _Orilla ("Ancho de la orilla (0-1)", Range(0.05, 1)) = 0.5
         _DistanciaMax ("Distancia maxima", Float) = 400
         _Bandas ("Bandas (toon)", Range(1, 8)) = 5
+        _MezclaBandas ("Mezcla de bandas (0 = continua)", Range(0, 1)) = 0
     }
     SubShader
     {
@@ -42,6 +43,7 @@ Shader "Ambiente/Neblina Bosque (volumen)"
                 float4 _Velocidad, _CentroPueblo, _RadiosPueblo;
                 float _Orilla, _DistanciaMax;
                 half _Bandas;
+                half _MezclaBandas;
             CBUFFER_END
             float _NeblinaDisipada; // global
 
@@ -112,7 +114,9 @@ Shader "Ambiente/Neblina Bosque (volumen)"
                     optico += Densidad(p, _Time.y) * dt;
                 }
                 float a = 1.0 - exp(-optico);
-                a = lerp(a, floor(a * _Bandas + 0.5) / _Bandas, 0.35);
+                // Las bandas toon dependen de la distancia: cada salto se veia como un anillo
+                // duro alrededor del jugador. Por defecto la neblina es continua.
+                a = lerp(a, floor(a * _Bandas + 0.5) / _Bandas, _MezclaBandas);
                 a *= 1.0 - saturate(_NeblinaDisipada);
                 return half4(_Color.rgb, a);
             }

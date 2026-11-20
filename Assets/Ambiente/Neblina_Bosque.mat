@@ -27,6 +27,7 @@ Material:
     m_Floats:
     - _Altura: 80
     - _Bandas: 4
+    - _MezclaBandas: 0
     - _Densidad: 0.016
     - _DensidadPueblo: 0.6
     - _DistanciaMax: 500
