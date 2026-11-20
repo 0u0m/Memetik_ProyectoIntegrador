@@ -20,6 +20,8 @@
 | `83da099` | README y capturas: AgX y GI más intenso |
 | `3ea1a45` | Post procesado y gráficos: SSAO a escala, sombras de faroles, DOF, motion blur, grano, flares |
 | `bcfc61e` | Shaders: modo realista (PBR) con `_Realismo`, normal maps y rugosidad |
+| `877be13` | README y capturas: modo realista, post procesado y costo |
+| `7319032` | Neblina: quita los anillos duros alrededor del jugador |
 
 Cada commit es un bloque temático. Se puede revisar o revertir por separado (`git revert <commit>`).
 
@@ -115,6 +117,7 @@ Las luces se dejan **Realtime**: `Amanecer.cs` cambia el sol, el cielo y el ambi
 
 | **Tonemapping AgX** como *Full Screen Pass Renderer Feature* (`Shaders/AgxTonemapping.shader` + `Settings/AgX_Tonemapping.mat`) en `PC_Renderer` y `Mobile_Renderer` | URP 17.3 solo trae Neutral y ACES. AgX lleva los brillos (ventanas, faroles, rebote) suavemente al blanco sin quemar ni torcer el tono, y deja más rango en las sombras. Look: contraste 1.15, saturación 1.05; la exposición se ajusta en el material |
 | `Noche_Volume`: Tonemapping Neutral → *None*; Color Grading en **HDR** (`PC_RPAsset` y `Mobile_RPAsset`) | URP hace bloom y gradeo en lineal y AgX hace la transformación a pantalla (con Neutral activo se aplicarían dos tonemappers) |
+| Neblina de volumen continua: la mezcla de bandas toon pasa a `_MezclaBandas` (por defecto 0) en `Neblina_Bosque.mat` | Las bandas dependían de la distancia a la cámara y se veían como **anillos con borde duro alrededor del jugador** ("niebla cortada"). Medido: la distancia al suelo plano era continua, pero la neblina saltaba de 13.5 a 6.1 niveles en 25 px; ahora baja de forma continua |
 | AgX: exposición **+0.35 EV** | Sin el tinte de sombra toon (modo realista) la escena perdía 10-25% de luminancia |
 | **SSAO** a escala: radio 0.3 → 1.5 u, intensidad 0.4 → 1.2, muestras y blur en *High* | 0.3 u eran 9 cm con 1 m = 3.4 u: no se veía. 1.5 u = 45 cm oscurece esquinas, aleros y contacto con el suelo |
 | **Depth of Field** gaussiano (140–700 u) | El fondo lejano se suaviza como en una cámara real, sin tocar lo que el jugador tiene cerca |
