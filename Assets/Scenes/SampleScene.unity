@@ -48709,12 +48709,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48790,7 +48802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -55655,12 +55667,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55736,7 +55760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -91374,12 +91398,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -91455,7 +91491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -131298,12 +131334,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -131374,7 +131422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -139841,12 +139889,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -139922,7 +139982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -154589,12 +154649,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -154670,7 +154742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -197041,12 +197113,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -197122,7 +197206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -200467,12 +200551,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -200548,7 +200644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -223728,12 +223824,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -223809,7 +223917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -273416,12 +273524,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -273497,7 +273617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -295173,12 +295293,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -295254,7 +295386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -329271,12 +329403,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -329352,7 +329496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -355104,12 +355248,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -355185,7 +355341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -360226,12 +360382,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -360307,7 +360475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -394751,12 +394919,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -394832,7 +395012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -431489,12 +431669,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -431570,7 +431762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -535292,12 +535484,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -535373,7 +535577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -558153,12 +558357,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -558234,7 +558450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -567066,12 +567282,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -567147,7 +567375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -572810,12 +573038,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -572891,7 +573131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -584788,12 +585028,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -584869,7 +585121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -599367,12 +599619,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -599443,7 +599707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -634448,12 +634712,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -634529,7 +634805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
@@ -665331,12 +665607,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_BounceIntensity
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784233790179479914, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8139452189907235675, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510909828219653508, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525576972580856993, guid: 1ea71ee815a5b4d42b74eb6d2a58d1cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -665412,7 +665700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_CustomShadowLayers: 0
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}

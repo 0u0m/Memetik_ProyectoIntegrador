@@ -25,7 +25,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Exposure: 0
+    - _Exposure: 0.35
     - _LookPower: 1.15
     - _LookSaturation: 1.05
     m_Colors:
