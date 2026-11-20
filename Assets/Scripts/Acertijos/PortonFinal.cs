@@ -22,6 +22,10 @@ public class PortonFinal : MonoBehaviour
     public float signoIzq = -1f;
     public float signoDer = 1f;
 
+    [Header("Shader de los circulos")]
+    [Tooltip("Asignado en el Inspector para que Unity lo incluya en el build. Shader.Find solo encuentra shaders que algun material usa.")]
+    public Shader shaderCirculo;
+
     [Header("Portal")]
     public Renderer portal;     // plano detras de la reja (opcional)
     public Light luzPortal;     // luz blanca (opcional)
@@ -30,10 +34,21 @@ public class PortonFinal : MonoBehaviour
     readonly List<Material> mats = new List<Material>();
     Quaternion izq0, der0;
 
-void Awake()
+    void Awake()
     {
+        // primero lo que no depende del shader (si algo falla abajo, la reja igual puede abrir)
+        if (hojaIzq != null) izq0 = hojaIzq.localRotation;
+        if (hojaDer != null) der0 = hojaDer.localRotation;
+        if (luzPortal != null) luzPortal.intensity = 0f;
+        if (portal != null) portal.enabled = false;
+
         // instancia de material por circulo, para animar cada uno por separado
-        var sh = Shader.Find("Porton/Circulo Nota");
+        var sh = shaderCirculo != null ? shaderCirculo : Shader.Find("Porton/Circulo Nota");
+        if (sh == null)
+        {
+            Debug.LogError("[PortonFinal] Falta el shader 'Porton/Circulo Nota': asignalo en 'Shader Circulo'.");
+            return;
+        }
         for (int i = 0; i < circulos.Count; i++)
         {
             if (circulos[i] == null) { mats.Add(null); continue; }
@@ -45,14 +60,9 @@ void Awake()
             circulos[i].material = m;
             mats.Add(m);
         }
-        if (hojaIzq != null) izq0 = hojaIzq.localRotation;
-        if (hojaDer != null) der0 = hojaDer.localRotation;
-        if (luzPortal != null) luzPortal.intensity = 0f;
-        if (portal != null) portal.enabled = false;
     }
 
-    // Lo llama ProgresoNotas cada vez que recoges una nota
-// Lo llama ProgresoNotas cada vez que recoges una nota: solo enciende circulos.
+    // Lo llama ProgresoNotas cada vez que recoges una nota: solo enciende circulos.
     // La reja se abre con el panel de la palabra secreta (AbrirPorton).
     public void NotaRecogida(int totalRecogidas)
     {
@@ -72,7 +82,7 @@ void Awake()
 
     IEnumerator Encender(int i)
     {
-        if (i >= mats.Count) yield break;
+        if (i >= mats.Count || mats[i] == null) yield break;
         float t = 0f;
         while (t < 1f) { t += Time.deltaTime / 0.8f; mats[i].SetFloat("_Encendido", Mathf.SmoothStep(0, 1, t)); yield return null; }
         mats[i].SetFloat("_Encendido", 1f);

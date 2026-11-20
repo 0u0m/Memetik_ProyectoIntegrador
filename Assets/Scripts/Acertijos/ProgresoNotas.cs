@@ -22,7 +22,7 @@ public class ProgresoNotas : MonoBehaviour
     [Tooltip("La camara que viaja a la casa final en cada nota. Opcional.")]
     public CamaraNota camaraNota;
 
-    float disipada, objetivo, densidadBase, ultimoAviso = -99f;
+    float disipada, objetivo, densidadBase;
 
     void Awake()
     {
@@ -31,11 +31,11 @@ public class ProgresoNotas : MonoBehaviour
         Shader.SetGlobalFloat("_NeblinaDisipada", 0f);
     }
 
-public void NotaRecogida()
+    public void NotaRecogida()
     {
         if (Recogidas >= totalNotas) return;          // ya estan todas
-        if (Time.time - ultimoAviso < 0.5f) return;   // evita contar dos veces el mismo E
-        ultimoAviso = Time.time;
+        // (Cada NotaColgante solo avisa una vez: ya se marca Recogida. Un antirrebote aqui
+        //  podia ignorar una nota que ya se habia ocultado y el juego no se podria terminar.)
 
         Recogidas = Mathf.Min(Recogidas + 1, totalNotas);
         objetivo = disipadaAlFinal * Recogidas / (float)totalNotas;

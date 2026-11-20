@@ -205029,6 +205029,50 @@ Transform:
   - {fileID: 1965807488}
   m_Father: {fileID: 2003312710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &642182128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 642182130}
+  - component: {fileID: 642182129}
+  m_Layer: 0
+  m_Name: Pausa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &642182129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642182128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2700b50c35be4e55b5cb372f1314d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PausaJuego
+--- !u!4 &642182130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642182128}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &642214603
 GameObject:
   m_ObjectHideFlags: 0
@@ -283255,6 +283299,7 @@ MonoBehaviour:
   duracionApertura: 2.5
   signoIzq: -1
   signoDer: 1
+  shaderCirculo: {fileID: 4800000, guid: 2cc25f5b8fcdc83459a6317a96ebaeec, type: 3}
   portal: {fileID: 1009167727}
   luzPortal: {fileID: 1863480437}
 --- !u!64 &905710376
@@ -1130149,6 +1130194,7 @@ SceneRoots:
   - {fileID: 615338683}
   - {fileID: 2003312710}
   - {fileID: 168522197}
+  - {fileID: 642182130}
   - {fileID: 605003180}
   - {fileID: 169518484}
   - {fileID: 1011677072}
