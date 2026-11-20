@@ -13,7 +13,7 @@ public class JugadorDoom : MonoBehaviour
     public float velocidad = 14f;          // ~4 m/s
     public float velocidadGiro = 110f;     // grados por segundo
     public float aceleracion = 10f;
-    public float gravedad = -60f;
+    public float gravedad = -33.4f;       // 9.81 m/s2 x 3.4 u/m
 
     [Header("Camara")]
     public Transform camara;
