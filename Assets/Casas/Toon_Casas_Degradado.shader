@@ -17,7 +17,7 @@ Shader "Casas/Toon Degradado"
         _RimColor ("Color borde", Color) = (1, 0.95, 0.85, 1)
         _RimAmount ("Cantidad borde", Range(0, 1)) = 0.15
         _RimPower ("Fuerza borde", Range(0.5, 8)) = 4
-        _GIIntensidad ("Luz indirecta (GI)", Range(0, 4)) = 2
+        _GIIntensidad ("Luz indirecta (GI)", Range(0, 8)) = 3
     }
     SubShader
     {
@@ -70,6 +70,8 @@ Shader "Casas/Toon Degradado"
             #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
             #pragma multi_compile _ DYNAMICLIGHTMAP_ON
+            #pragma multi_compile _ DIRLIGHTMAP_COMBINED
+            #pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Assets/Casas/ToonLuces.hlsl"
 
@@ -114,7 +116,7 @@ Shader "Casas/Toon Degradado"
                 half rim = pow(1.0 - saturate(dot(n, v)), _RimPower);
                 col += _RimColor.rgb * step(0.5, rim) * _RimAmount * b;
 
-                col += albedo * ToonGI(i.dynLmUV, n) * _GIIntensidad;
+                col += albedo * ToonGI(i.dynLmUV, n, i.positionCS) * _GIIntensidad;
                 col += ToonLucesAdicionales(i.positionWS, n, i.positionCS, albedo);
                 col = MixFog(col, i.fogFactor);
                 return half4(col, 1);

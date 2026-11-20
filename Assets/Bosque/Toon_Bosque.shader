@@ -8,7 +8,7 @@ Shader "Bosque/Toon"
         _RimColor ("Color borde", Color) = (0.75, 0.95, 0.6, 1)
         _RimPower ("Fuerza borde", Range(0.5, 8)) = 4
         _RimAmount ("Cantidad borde", Range(0, 1)) = 0.25
-        _GIIntensidad ("Luz indirecta (GI)", Range(0, 4)) = 2
+        _GIIntensidad ("Luz indirecta (GI)", Range(0, 8)) = 3
     }
     SubShader
     {
@@ -40,6 +40,7 @@ Shader "Bosque/Toon"
             #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
             #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
+            #pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Assets/Casas/ToonLuces.hlsl"
 
@@ -75,7 +76,7 @@ Shader "Bosque/Toon"
                 half rim = pow(1.0 - saturate(dot(n, v)), _RimPower);
                 rim = step(0.5, rim) * _RimAmount * t;
                 col += _RimColor.rgb * rim;
-                col += _BaseColor.rgb * ToonGI(0, n) * _GIIntensidad;
+                col += _BaseColor.rgb * ToonGI(0, n, i.positionCS) * _GIIntensidad;
                 col += ToonLucesAdicionales(i.positionWS, n, i.positionCS, _BaseColor.rgb);
                 col = MixFog(col, i.fogFactor);
                 return half4(col, 1);

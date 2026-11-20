@@ -11,7 +11,7 @@ Shader "Bosque/Toon Pasto"
         _WindSpeed ("Velocidad viento", Float) = 1.6
         _WindScale ("Tamano rafagas", Float) = 0.05
         _WindDir ("Direccion viento", Vector) = (1, 0, 0.4, 0)
-        _GIIntensidad ("Luz indirecta (GI)", Range(0, 4)) = 2
+        _GIIntensidad ("Luz indirecta (GI)", Range(0, 8)) = 3
     }
     SubShader
     {
@@ -69,6 +69,7 @@ Shader "Bosque/Toon Pasto"
             #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
             #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
+            #pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Assets/Casas/ToonLuces.hlsl"
 
@@ -118,7 +119,7 @@ Shader "Bosque/Toon Pasto"
                 col *= lerp(_ShadowTint.rgb, half3(1, 1, 1), b) * l.color;
 
                 half3 albedoPasto = lerp(_RootColor.rgb, tip, smoothstep(0.0, 1.0, i.alto));
-                col += albedoPasto * ToonGI(0, float3(0, 1, 0)) * _GIIntensidad;
+                col += albedoPasto * ToonGI(0, float3(0, 1, 0), i.positionCS) * _GIIntensidad;
                 col += ToonLucesAdicionales(i.positionWS, float3(0, 1, 0), i.positionCS, albedoPasto);
                 col = MixFog(col, i.fogFactor);
                 return half4(col, 1);
