@@ -11,6 +11,7 @@ Shader "Bosque/Toon Pasto"
         _WindSpeed ("Velocidad viento", Float) = 1.6
         _WindScale ("Tamano rafagas", Float) = 0.05
         _WindDir ("Direccion viento", Vector) = (1, 0, 0.4, 0)
+        _GIIntensidad ("Luz indirecta (GI)", Range(0, 4)) = 2
     }
     SubShader
     {
@@ -29,6 +30,7 @@ Shader "Bosque/Toon Pasto"
             float _WindSpeed;
             float _WindScale;
             float4 _WindDir;
+            half _GIIntensidad;
         CBUFFER_END
 
         float hash21(float2 p) { return frac(sin(dot(p, float2(127.1, 311.7))) * 43758.5453); }
@@ -115,7 +117,9 @@ Shader "Bosque/Toon Pasto"
                 half b = step(0.35, ndl);
                 col *= lerp(_ShadowTint.rgb, half3(1, 1, 1), b) * l.color;
 
-                col += ToonLucesAdicionales(i.positionWS, float3(0, 1, 0), i.positionCS, lerp(_RootColor.rgb, tip, smoothstep(0.0, 1.0, i.alto)));
+                half3 albedoPasto = lerp(_RootColor.rgb, tip, smoothstep(0.0, 1.0, i.alto));
+                col += albedoPasto * ToonGI(0, float3(0, 1, 0)) * _GIIntensidad;
+                col += ToonLucesAdicionales(i.positionWS, float3(0, 1, 0), i.positionCS, albedoPasto);
                 col = MixFog(col, i.fogFactor);
                 return half4(col, 1);
             }

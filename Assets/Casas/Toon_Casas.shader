@@ -12,6 +12,7 @@ Shader "Casas/Toon Texturizado"
         _RimAmount ("Cantidad borde", Range(0, 1)) = 0.15
         _RimPower ("Fuerza borde", Range(0.5, 8)) = 4
         [HDR] _EmissionColor ("Emision (brillo propio)", Color) = (0, 0, 0, 1)
+        _GIIntensidad ("Luz indirecta (GI)", Range(0, 4)) = 2
         [Enum(UnityEngine.Rendering.CullMode)] _Cull ("Caras visibles", Float) = 2
     }
     SubShader
@@ -31,6 +32,7 @@ Shader "Casas/Toon Texturizado"
             half _RimAmount;
             half _RimPower;
             half4 _EmissionColor;
+            half _GIIntensidad;
         CBUFFER_END
         TEXTURE2D(_BaseMap); SAMPLER(sampler_BaseMap);
         ENDHLSL
@@ -49,10 +51,11 @@ Shader "Casas/Toon Texturizado"
             #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
             #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
+            #pragma multi_compile _ DYNAMICLIGHTMAP_ON
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Assets/Casas/ToonLuces.hlsl"
 
-            struct Attributes { float4 positionOS : POSITION; float3 normalOS : NORMAL; float2 uv : TEXCOORD0; };
+            struct Attributes { float4 positionOS : POSITION; float3 normalOS : NORMAL; float2 uv : TEXCOORD0; float2 uv2 : TEXCOORD2; };
             struct Varyings
             {
                 float4 positionCS : SV_POSITION;
@@ -60,6 +63,7 @@ Shader "Casas/Toon Texturizado"
                 float3 normalWS : TEXCOORD1;
                 float2 uv : TEXCOORD2;
                 float fogFactor : TEXCOORD3;
+                float2 dynLmUV : TEXCOORD4;
             };
 
             Varyings vert (Attributes i)
@@ -71,6 +75,7 @@ Shader "Casas/Toon Texturizado"
                 o.normalWS = TransformObjectToWorldNormal(i.normalOS);
                 o.uv = TRANSFORM_TEX(i.uv, _BaseMap);
                 o.fogFactor = ComputeFogFactor(p.positionCS.z);
+                o.dynLmUV = i.uv2 * unity_DynamicLightmapST.xy + unity_DynamicLightmapST.zw;
                 return o;
             }
 
@@ -96,10 +101,32 @@ Shader "Casas/Toon Texturizado"
                 half rim = pow(1.0 - saturate(dot(n, v)), _RimPower);
                 col += _RimColor.rgb * step(0.5, rim) * _RimAmount * t;
 
+                col += albedo * ToonGI(i.dynLmUV, n) * _GIIntensidad;
                 col += ToonLucesAdicionales(i.positionWS, n, i.positionCS, albedo);
                 col += _EmissionColor.rgb;
                 col = MixFog(col, i.fogFactor);
                 return half4(col, 1);
+            }
+            ENDHLSL
+        }
+
+        Pass
+        {
+            // Le da a Enlighten el color de la superficie para calcular el rebote de luz
+            Name "Meta"
+            Tags { "LightMode"="Meta" }
+            Cull Off
+            HLSLPROGRAM
+            #pragma vertex UniversalVertexMeta
+            #pragma fragment fragMeta
+            #pragma shader_feature EDITOR_VISUALIZATION
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/UniversalMetaPass.hlsl"
+            half4 fragMeta (Varyings i) : SV_Target
+            {
+                MetaInput m = (MetaInput)0;
+                m.Albedo = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, i.uv).rgb * _BaseColor.rgb;
+                m.Emission = _EmissionColor.rgb;
+                return UniversalFragmentMeta(i, m);
             }
             ENDHLSL
         }

@@ -17,6 +17,7 @@ Shader "Casas/Toon Degradado"
         _RimColor ("Color borde", Color) = (1, 0.95, 0.85, 1)
         _RimAmount ("Cantidad borde", Range(0, 1)) = 0.15
         _RimPower ("Fuerza borde", Range(0.5, 8)) = 4
+        _GIIntensidad ("Luz indirecta (GI)", Range(0, 4)) = 2
     }
     SubShader
     {
@@ -38,8 +39,21 @@ Shader "Casas/Toon Degradado"
             half4 _RimColor;
             half _RimAmount;
             half _RimPower;
+            half _GIIntensidad;
         CBUFFER_END
         TEXTURE2D(_BaseMap); SAMPLER(sampler_BaseMap);
+
+        // Mismo calculo de color que el Shader Graph "Casa 2" (lo usan ForwardLit y Meta)
+        half3 AlbedoDegradado(float2 uv)
+        {
+            float r = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, uv).r;
+            float s = r * _Multiplicador;
+            float3 inV = _SatIn.xyz;
+            float luma = dot(inV, float3(0.2126729, 0.7151522, 0.0721750));
+            float t = luma + s * (inV.x - luma);
+            float k = saturate((t - _PosA) / max(_PosB - _PosA, 1e-4));
+            return lerp(_ColorA.rgb, _ColorB.rgb, k);
+        }
         ENDHLSL
 
         Pass
@@ -55,10 +69,11 @@ Shader "Casas/Toon Degradado"
             #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
             #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
+            #pragma multi_compile _ DYNAMICLIGHTMAP_ON
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Assets/Casas/ToonLuces.hlsl"
 
-            struct Attributes { float4 positionOS : POSITION; float3 normalOS : NORMAL; float2 uv : TEXCOORD0; };
+            struct Attributes { float4 positionOS : POSITION; float3 normalOS : NORMAL; float2 uv : TEXCOORD0; float2 uv2 : TEXCOORD2; };
             struct Varyings
             {
                 float4 positionCS : SV_POSITION;
@@ -66,6 +81,7 @@ Shader "Casas/Toon Degradado"
                 float3 normalWS : TEXCOORD1;
                 float2 uv : TEXCOORD2;
                 float fogFactor : TEXCOORD3;
+                float2 dynLmUV : TEXCOORD4;
             };
 
             Varyings vert (Attributes i)
@@ -77,19 +93,14 @@ Shader "Casas/Toon Degradado"
                 o.normalWS = TransformObjectToWorldNormal(i.normalOS);
                 o.uv = TRANSFORM_TEX(i.uv, _BaseMap);
                 o.fogFactor = ComputeFogFactor(p.positionCS.z);
+                o.dynLmUV = i.uv2 * unity_DynamicLightmapST.xy + unity_DynamicLightmapST.zw;
                 return o;
             }
 
             half4 frag (Varyings i) : SV_Target
             {
                 // --- igual que el Shader Graph ---
-                float r = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, i.uv).r;
-                float s = r * _Multiplicador;
-                float3 inV = _SatIn.xyz;
-                float luma = dot(inV, float3(0.2126729, 0.7151522, 0.0721750));
-                float t = luma + s * (inV.x - luma);
-                float k = saturate((t - _PosA) / max(_PosB - _PosA, 1e-4));
-                half3 albedo = lerp(_ColorA.rgb, _ColorB.rgb, k);
+                half3 albedo = AlbedoDegradado(i.uv);
 
                 // --- iluminacion toon ---
                 Light l = GetMainLight(TransformWorldToShadowCoord(i.positionWS));
@@ -103,9 +114,30 @@ Shader "Casas/Toon Degradado"
                 half rim = pow(1.0 - saturate(dot(n, v)), _RimPower);
                 col += _RimColor.rgb * step(0.5, rim) * _RimAmount * b;
 
+                col += albedo * ToonGI(i.dynLmUV, n) * _GIIntensidad;
                 col += ToonLucesAdicionales(i.positionWS, n, i.positionCS, albedo);
                 col = MixFog(col, i.fogFactor);
                 return half4(col, 1);
+            }
+            ENDHLSL
+        }
+
+        Pass
+        {
+            // Le da a Enlighten el color de la superficie para calcular el rebote de luz
+            Name "Meta"
+            Tags { "LightMode"="Meta" }
+            Cull Off
+            HLSLPROGRAM
+            #pragma vertex UniversalVertexMeta
+            #pragma fragment fragMeta
+            #pragma shader_feature EDITOR_VISUALIZATION
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/UniversalMetaPass.hlsl"
+            half4 fragMeta (Varyings i) : SV_Target
+            {
+                MetaInput m = (MetaInput)0;
+                m.Albedo = AlbedoDegradado(i.uv);
+                return UniversalFragmentMeta(i, m);
             }
             ENDHLSL
         }

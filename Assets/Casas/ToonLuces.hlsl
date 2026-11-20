@@ -19,4 +19,17 @@ half3 ToonLucesAdicionales(float3 posWS, float3 n, float4 posCS, half3 albedo)
 #endif
     return suma;
 }
+
+// Luz indirecta (GI dinamico).
+//  - Objetos estaticos (Contribute GI): lightmap de Enlighten en tiempo real (DYNAMICLIGHTMAP_ON).
+//  - Objetos dinamicos (arboles, pasto, hada...): light probes / ambiente (SH), que Enlighten
+//    tambien actualiza en runtime cuando Amanecer cambia el sol y el cielo.
+half3 ToonGI(float2 dynamicLightmapUV, float3 n)
+{
+#if defined(DYNAMICLIGHTMAP_ON)
+    return SampleLightmap(0, dynamicLightmapUV, n);
+#else
+    return SampleSH(n);
+#endif
+}
 #endif
