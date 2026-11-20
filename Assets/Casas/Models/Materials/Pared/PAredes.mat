@@ -34,7 +34,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 4205c9dc9de28c341bc928076dfabbe6, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 1, y: 1.72}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
@@ -66,6 +66,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 2800000, guid: ae9b457dd297d2e47a8b58c7d94dfe63, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughMap:
+        m_Texture: {fileID: 2800000, guid: b0497eceeea620c4aad56deba1db54dd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -101,6 +105,8 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _GIIntensidad: 3
+    - _GIReal: 2
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -108,11 +114,12 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.0163
     - _QueueOffset: 0
+    - _Realismo: 1
     - _ReceiveShadows: 1
     - _RimAmount: 0.15
     - _RimPower: 4
     - _Saturacion: 1.2
-    - _Smoothness: 0.5
+    - _Smoothness: 0.3
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -120,6 +127,7 @@ Material:
     - _Steps: 2
     - _Suavidad: 0.03
     - _Surface: 0
+    - _UsarRugosidad: 1
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1

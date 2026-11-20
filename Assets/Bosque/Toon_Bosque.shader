@@ -9,6 +9,12 @@ Shader "Bosque/Toon"
         _RimPower ("Fuerza borde", Range(0.5, 8)) = 4
         _RimAmount ("Cantidad borde", Range(0, 1)) = 0.25
         _GIIntensidad ("Luz indirecta (GI)", Range(0, 8)) = 3
+        [Header(Realismo)]
+        _Realismo ("Realismo (0 = toon, 1 = PBR)", Range(0, 1)) = 1
+        _Smoothness ("Lisura", Range(0, 1)) = 0.2
+        _Translucidez ("Luz a traves de las hojas", Range(0, 2)) = 0.6
+        _Variacion ("Variacion de color", Range(0, 1)) = 0.3
+        _GIReal ("Luz indirecta (realista)", Range(0, 4)) = 2
     }
     SubShader
     {
@@ -24,6 +30,11 @@ Shader "Bosque/Toon"
             half _RimPower;
             half _RimAmount;
             half _GIIntensidad;
+            half _Realismo;
+            half _Smoothness;
+            half _Translucidez;
+            half _Variacion;
+            half _GIReal;
         CBUFFER_END
         ENDHLSL
 
@@ -41,6 +52,7 @@ Shader "Bosque/Toon"
             #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
             #pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
+            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Assets/Casas/ToonLuces.hlsl"
 
@@ -78,6 +90,17 @@ Shader "Bosque/Toon"
                 col += _RimColor.rgb * rim;
                 col += _BaseColor.rgb * ToonGI(0, n, i.positionCS) * _GIIntensidad;
                 col += ToonLucesAdicionales(i.positionWS, n, i.positionCS, _BaseColor.rgb);
+
+                // --- modo realista (PBR): variacion por arbol y por zona, luz a traves de las hojas ---
+                if (_Realismo > 0.001)
+                {
+                    float3 obj = GetObjectToWorldMatrix()._m03_m13_m23;
+                    half var = RuidoReal(obj.xz * 0.11) * 0.6 + RuidoReal(i.positionWS.xz * 0.07 + i.positionWS.y * 0.05) * 0.4;
+                    half3 albedoR = _BaseColor.rgb * lerp(1 - _Variacion, 1 + _Variacion, var);
+                    half3 real = IluminacionReal(albedoR, 0, _Smoothness, i.positionWS, n, v, i.positionCS,
+                                                 ToonGI(0, n, i.positionCS) * _GIReal, _Translucidez);
+                    col = lerp(col, real, _Realismo);
+                }
                 col = MixFog(col, i.fogFactor);
                 return half4(col, 1);
             }

@@ -27,15 +27,30 @@ Material:
         m_Texture: {fileID: 2800000, guid: c208345bbdc437848bbc8f9faa36641b, type: 3}
         m_Scale: {x: 1, y: 1.76}
         m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 4205c9dc9de28c341bc928076dfabbe6, type: 3}
+        m_Scale: {x: 1, y: 1.76}
+        m_Offset: {x: 0, y: 0}
+    - _RoughMap:
+        m_Texture: {fileID: 2800000, guid: b0497eceeea620c4aad56deba1db54dd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BumpScale: 1
+    - _GIIntensidad: 3
+    - _GIReal: 2
+    - _Metallic: 0
     - _Multiplicador: 2.4
     - _PosA: 0.4971
     - _PosB: 0.8647
+    - _Realismo: 1
     - _RimAmount: 0.15
     - _RimPower: 4
+    - _Smoothness: 0.3
     - _Steps: 2
     - _Suavidad: 0.03
+    - _UsarRugosidad: 1
     m_Colors:
     - _ColorA: {r: 0.3962264, g: 0.1971787, b: 0.16634032, a: 1}
     - _ColorB: {r: 1, g: 1, b: 1, a: 1}

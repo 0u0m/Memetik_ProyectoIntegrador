@@ -12,6 +12,11 @@ Shader "Bosque/Toon Pasto"
         _WindScale ("Tamano rafagas", Float) = 0.05
         _WindDir ("Direccion viento", Vector) = (1, 0, 0.4, 0)
         _GIIntensidad ("Luz indirecta (GI)", Range(0, 8)) = 3
+        [Header(Realismo)]
+        _Realismo ("Realismo (0 = toon, 1 = PBR)", Range(0, 1)) = 1
+        _Smoothness ("Lisura", Range(0, 1)) = 0.1
+        _Translucidez ("Luz a traves del pasto", Range(0, 2)) = 0.9
+        _GIReal ("Luz indirecta (realista)", Range(0, 4)) = 2.5
     }
     SubShader
     {
@@ -31,6 +36,10 @@ Shader "Bosque/Toon Pasto"
             float _WindScale;
             float4 _WindDir;
             half _GIIntensidad;
+            half _Realismo;
+            half _Smoothness;
+            half _Translucidez;
+            half _GIReal;
         CBUFFER_END
 
         float hash21(float2 p) { return frac(sin(dot(p, float2(127.1, 311.7))) * 43758.5453); }
@@ -70,6 +79,7 @@ Shader "Bosque/Toon Pasto"
             #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
             #pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
+            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Assets/Casas/ToonLuces.hlsl"
 
@@ -121,6 +131,21 @@ Shader "Bosque/Toon Pasto"
                 half3 albedoPasto = lerp(_RootColor.rgb, tip, smoothstep(0.0, 1.0, i.alto));
                 col += albedoPasto * ToonGI(0, float3(0, 1, 0), i.positionCS) * _GIIntensidad;
                 col += ToonLucesAdicionales(i.positionWS, float3(0, 1, 0), i.positionCS, albedoPasto);
+
+                // --- modo realista (PBR): la punta se oscurece hacia la raiz y deja pasar luz ---
+                if (_Realismo > 0.001)
+                {
+                    float3 vP = normalize(GetWorldSpaceViewDir(i.positionWS));
+                    // normal inclinada hacia la camara: con la normal vertical, de lado el Fresnel
+                    // reflejaba el cielo en las puntas y las hojas se veian como tocones oscuros
+                    float3 nP = normalize(float3(0, 1, 0) + float3(vP.x, 0, vP.z) * 0.8);
+                    half3 albedoR = albedoPasto * lerp(0.75, 1.0, i.alto);
+                    // piso de luz ambiente del cielo: las sondas pegadas a muros y arboles quedan muy oscuras
+                    // y el pasto se veia negro sobre un suelo (estatico, con lightmap) mas claro
+                    half3 giP = max(ToonGI(0, nP, i.positionCS), unity_AmbientSky.rgb) * _GIReal;
+                    half3 real = IluminacionReal(albedoR, 0, _Smoothness, i.positionWS, nP, vP, i.positionCS, giP, _Translucidez);
+                    col = lerp(col, real, _Realismo);
+                }
                 col = MixFog(col, i.fogFactor);
                 return half4(col, 1);
             }

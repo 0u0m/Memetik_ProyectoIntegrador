@@ -27,14 +27,29 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BumpScale: 1
     - _Cull: 0
+    - _GIIntensidad: 3
+    - _GIReal: 2
+    - _Metallic: 0
+    - _Realismo: 1
     - _RimAmount: 0.3
     - _RimPower: 4
     - _Saturacion: 1.2
+    - _Smoothness: 0.3
     - _Steps: 2
     - _Suavidad: 0.03
+    - _UsarRugosidad: 0
     m_Colors:
     - _BaseColor: {r: 0.96, g: 0.89, b: 0.7, a: 1}
     - _EmissionColor: {r: 0.35, g: 0.28, b: 0.12, a: 1}
